@@ -1,6 +1,8 @@
+DROP DATABASE lab2;
+
 CREATE DATABASE lab2;
 
-CREATE TABLE countries (
+CREATE TABLE IF NOT EXISTS countries (
     country_id SERIAL PRIMARY KEY,
     country_name VARCHAR(255),
     region_id INTEGER,
@@ -11,7 +13,7 @@ INSERT INTO countries (country_name, region_id, population)
 VALUES ('Kazakhstan', 1, 18754440);
 
 INSERT INTO countries (country_id, country_name)
-VALUES (2, 'Uzbekistan');
+VALUES (50, 'Uzbekistan');
 
 INSERT INTO countries (country_name, region_id, population)
 VALUES ('Turkmenistan', NULL, 6031200);

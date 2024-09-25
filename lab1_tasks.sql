@@ -1,39 +1,29 @@
-
-
 CREATE DATABASE lab1;
 
-
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
     id SERIAL,
     firstname VARCHAR(50),
     lastname VARCHAR(50)
 );
 
-
 ALTER TABLE users
 ADD COLUMN isadmin INTEGER;
 
-
 ALTER TABLE users
-ALTER COLUMN isadmin TYPE BOOLEAN;
-
+ALTER COLUMN isadmin TYPE BOOLEAN USING isadmin::boolean;
 
 ALTER TABLE users
 ALTER COLUMN isadmin SET DEFAULT FALSE;
 
-
 ALTER TABLE users
-ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+ADD PRIMARY KEY (id);
 
-
-CREATE TABLE tasks (
+CREATE TABLE IF NOT EXISTS tasks (
     id SERIAL,
     name VARCHAR(50),
     user_id INTEGER
 );
 
-
 DROP TABLE tasks;
-
 
 DROP DATABASE lab1;
