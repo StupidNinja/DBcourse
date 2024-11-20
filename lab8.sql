@@ -73,14 +73,14 @@ JOIN
 JOIN 
     salesmans s ON o.salesman_id = s.salesman_id;
 
-GRANT ALL PRIVILEGES ON VIEW order_salesman_customer TO junior_dev;
+GRANT ALL PRIVILEGES ON order_salesman_customer TO junior_dev;
 
 -------------------
 CREATE VIEW highest_grade_customers AS
 SELECT * FROM customers
 WHERE grade = (SELECT MAX(grade) FROM customers);
 
-GRANT SELECT ON VIEW highest_grade_customers TO junior_dev;
+GRANT SELECT ON highest_grade_customers TO junior_dev;
 -------------------
 CREATE VIEW salesman_number_each_city AS
 SELECT 
